@@ -1,78 +1,129 @@
 <!DOCTYPE html>
 <html lang="es">
-    <head>
-        <meta charset="UTF-8">
-        <title>App</title>
+<head>
+    <meta charset="UTF-8">
+    <title>App</title>
 
-        <!-- Bootstrap -->
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 
-        <!-- Google Fonts -->
-        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Ubuntu:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Ubuntu:wght@400;700&display=swap" rel="stylesheet">
 
-        <!-- CSS -->
-        <link rel="stylesheet" href="styles.css">
-    </head>
     <style>
-            #title{
-    background-color: #ff4c68;
-    color: white;
-    }
+        /* Fuente general del documento */
+        body {
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
 
-    /* Container-fluid */
-    .container-fluid{
-    padding: 3% 15%;
-    }
+        /* Contenedor del header */
+        #title {
+            background-color: #ff4c68;
+            color: white;
+        }
 
-    /* Fuente del eslogan */
-    h1{
-    font-family: 'Montserrat', sans-serif;
-    font-size: 3rem;
-    }
+        .container-fluid {
+            padding: 3% 15%;
+        }
 
-    /* Fuente del nombre de la app en la navbar */
-    .app-name{
-    font-family: 'Ubuntu', sans-serif;
-    font-size: 2rem;
-    }
+        /* Navbar */
+        .navbar {
+            background-color: transparent; /* eliminar fondo oscuro */
+            padding-bottom: 4.5rem; /* padding inferior */
+        }
 
-    /* Eliminar fondo oscuro de navbar */
-    .navbar{
-    background-color: transparent;
-    }
+        .navbar-brand {
+            font-family: 'Ubuntu', sans-serif;
+            font-size: 2.5rem; /* tamaño del nombre de la app */
+        }
+
+        /* Menú de enlaces */
+        .navbar-nav .nav-link {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.2rem;
+            padding-left: 18px;
+            padding-right: 18px;
+            color: white !important;
+        }
+
+        /* H1 del eslogan */
+        .title-text {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 3.5rem; /* tamaño del eslogan */
+            margin-bottom: 1rem;
+        }
+
+        /* Botones */
+        .custom-btn {
+            margin: 5% 3% 5% 0; /* margen superior, derecho, inferior, izquierdo */
+        }
+
+        /* Imagen */
+        .app-img {
+            transform: rotate(25deg);
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
+
+        /* Columna del eslogan para alinear verticalmente */
+        .d-flex-align {
+            display: flex;
+            flex-direction: column;
+            justify-content: center; /* alinea verticalmente */
+            height: 100%;
+        }
+
+        /* Asegura que el color de todo dentro de #title sea blanco */
+        #title * {
+            color: white !important;
+        }
+
     </style>
-    <body>
+</head>
+<body>
 
-        <section id="title">
+<section id="title">
+    <div class="container-fluid">
 
-        <div class="container-fluid">
+        <!-- Navbar -->
+        <nav class="navbar navbar-expand-lg">
+            <a class="navbar-brand" href="#">MiApp</a>
+            <div class="collapse navbar-collapse">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Funcionalidades</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Descargar</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Contacto</a></li>
+                </ul>
+            </div>
+        </nav>
 
-            <!-- Navbar -->
-            <nav class="navbar navbar-expand-lg">
-            <a class="navbar-brand app-name" href="#">MiApp</a>
-            </nav>
+        <!-- Row principal -->
+        <div class="row">
 
-            <!-- Row -->
-            <div class="row">
-
-            <!-- Columna 1 -->
-            <div class="col-lg-6 col-md-12 col-sm-12">
-                <h1>La mejor aplicación para organizar tu vida.</h1>
-
-                <button type="button" class="btn btn-dark btn-lg">Descargar</button>
-                <button type="button" class="btn btn-outline-light btn-lg">Descargar</button>
+            <!-- Columna 1: Eslogan + botones -->
+            <div class="col-lg-6 col-md-12 col-sm-12 d-flex-align">
+                <h1 class="title-text">La mejor aplicación para organizar tu vida.</h1>
+                <div>
+                    <button type="button" class="btn btn-dark btn-lg custom-btn">Descargar</button>
+                    <button type="button" class="btn btn-outline-light btn-lg custom-btn">Descargar</button>
+                </div>
             </div>
 
-            <!-- Columna 2 -->
-            <div class="col-lg-6 col-md-12 col-sm-12">
-                <img src="imagen-app.png" class="img-fluid" alt="App">
-            </div>
-
+            <!-- Columna 2: Imagen -->
+            <div class="col-lg-6 col-md-12 col-sm-12 d-flex align-items-center justify-content-center">
+                <!-- Inserta aquí tu imagen -->
+                <img src="imagen-app.png" alt="App" class="app-img">
             </div>
 
         </div>
+    </div>
+</section>
 
-        </section>
-
-    </body>
+</body>
 </html>
